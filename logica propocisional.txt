@@ -1,0 +1,28 @@
+    Sintaxis y Semántica: Tablas de Verdad:
+        Sintaxis: Se refiere a las reglas y la estructura utilizada para formar expresiones lógicas válidas en lógica proposicional. Esto incluye la definición de proposiciones, conectores lógicos y reglas de construcción de fórmulas.
+        Semántica: Se ocupa de asignar valores de verdad (verdadero o falso) a las proposiciones y expresiones lógicas. Las tablas de verdad son herramientas para determinar el valor de verdad de expresiones más complejas a partir de las proposiciones básicas.
+
+    Base de Conocimiento:
+        En el contexto de la lógica proposicional, la base de conocimiento es una colección de declaraciones o hechos representados como fórmulas lógicas. Se utiliza en sistemas de inteligencia artificial para almacenar y organizar información que luego se utiliza en procesos de inferencia.
+
+    Inferencia Lógica Proposicional:
+        La inferencia lógica proposicional implica el proceso de razonamiento o deducción a partir de una base de conocimiento para llegar a nuevas conclusiones lógicas. Puede realizarse utilizando reglas de inferencia, como la modus ponens, la modus tollens, etc.
+
+    Equivalencia, Validez y Satisfacibilidad:
+        Equivalencia: Dos expresiones lógicas son equivalentes si tienen la misma tabla de verdad, es decir, producen los mismos valores de verdad para todas las combinaciones de valores de verdad de sus variables.
+        Validez: Una expresión lógica es válida si es verdadera para todas las posibles asignaciones de valores de verdad a sus variables.
+        Satisfacibilidad: Una expresión lógica es satisfacible si existe al menos una asignación de valores de verdad a sus variables que la hace verdadera.
+
+    Resolución y Forma Normal Conjuntiva:
+        La resolución es un método de inferencia utilizado para demostrar la validez o satisfacibilidad de fórmulas lógicas. Se basa en la resolución de cláusulas, que son fórmulas en forma normal conjuntiva (FNC), una forma estandarizada de expresar proposiciones lógicas.
+
+    Encadenamiento: Hacia Delante y Atrás:
+        El encadenamiento hacia adelante y hacia atrás son estrategias de razonamiento utilizadas en sistemas expertos. El encadenamiento hacia adelante comienza con hechos conocidos y avanza hacia conclusiones, mientras que el encadenamiento hacia atrás parte de una meta y retrocede para encontrar las condiciones necesarias para alcanzarla.
+
+    Backtracking:
+        El backtracking es una técnica de búsqueda utilizada para resolver problemas combinatorios. Consiste en explorar opciones y retroceder cuando se encuentra un callejón sin salida. Es comúnmente utilizado en algoritmos de búsqueda en espacios de estados.
+
+    Algoritmos de Búsqueda Local:
+        Los algoritmos de búsqueda local son utilizados en la optimización y búsqueda de soluciones en espacios de búsqueda. Se centran en mejorar iterativamente una solución inicial a través de movimientos locales, buscando un óptimo local en lugar de una solución global.
+
+Estos temas son fundamentales en el campo de la lógica proposicional y la inteligencia artificial, y se utilizan para el razonamiento, la toma de decisiones, la resolución de problemas y la representación del conocimiento en sistemas computacionales.
