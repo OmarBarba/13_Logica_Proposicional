@@ -1,44 +1,36 @@
-import heapq
-
-# Definición de un grafo con nodos y conexiones
-grafo = {
-    'A': {'B': 1, 'C': 4},
-    'B': {'A': 1, 'C': 2, 'D': 5},
-    'C': {'A': 4, 'B': 2, 'D': 1},
-    'D': {'B': 5, 'C': 1}
+# Definición de una base de conocimiento con reglas lógicas
+base_de_conocimiento = {
+    "regla1": {
+        "si": ["p", "q"],
+        "entonces": "r"
+    },
+    "regla2": {
+        "si": ["s", "t"],
+        "entonces": "p"
+    },
+    "regla3": {
+        "si": ["u"],
+        "entonces": "s"
+    },
+    # Agrega más reglas lógicas según sea necesario
 }
 
-# Función para encontrar la ruta más corta utilizando el algoritmo A*
-def encontrar_ruta_mas_corta(grafo, inicio, objetivo):
-    frontera = [(0, inicio)]
-    visitados = set()
+# Hechos iniciales
+hechos = ["u"]
 
-    while frontera:
-        costo, nodo_actual = heapq.heappop(frontera)
+# Encadenamiento hacia adelante
+def encadenamiento_hacia_adelante(base_conocimiento, hechos):
+    nuevos_hechos = []
+    while True:
+        se_agregaron_nuevos_hechos = False
+        for regla, datos in base_conocimiento.items():
+            if set(datos["si"]).issubset(set(hechos)) and datos["entonces"] not in hechos:
+                nuevos_hechos.append(datos["entonces"])
+                se_agregaron_nuevos_hechos = True
+        hechos.extend(nuevos_hechos)
+        if not se_agregaron_nuevos_hechos:
+            break
+    return hechos
 
-        if nodo_actual == objetivo:
-            return costo
-
-        if nodo_actual in visitados:
-            continue
-
-        visitados.add(nodo_actual)
-
-        for vecino, costo_vecino in grafo[nodo_actual].items():
-            if vecino not in visitados:
-                nuevo_costo = costo + costo_vecino
-                heapq.heappush(frontera, (nuevo_costo, vecino))
-
-    return float('inf')  # No se encontró una ruta
-
-# Ubicaciones
-inicio = 'A'
-objetivo = 'D'
-
-# Encontrar la ruta más corta
-costo_ruta = encontrar_ruta_mas_corta(grafo, inicio, objetivo)
-
-if costo_ruta != float('inf'):
-    print(f"La ruta más corta desde {inicio} a {objetivo} tiene un costo de {costo_ruta}.")
-else:
-    print(f"No hay una ruta válida desde {inicio} a {objetivo}.")
+nuevos_hechos = encadenamiento_hacia_adelante(base_de_conocimiento, hechos)
+print("Hechos derivados por encadenamiento hacia adelante:", nuevos_hechos)
